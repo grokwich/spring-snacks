@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	 <style>
+	    	.error { color: red; font-size: 0.9em; font-weight: bold; }
+	</style>    
+</head>
+<body>
+    <p th:text="'Hello, Bud! Please fill out the form.'" />    
+    
+    <form action="#" th:action="@{/fooform}" th:object="${command}" method="post">
+    		<p>Simple Text Field: <input type="text" th:field="*{textField}" /></p>
+    		
+    		
+    		<p>Text Area Field: <textarea th:field="*{textareaField}" ></textarea></p>
+    		
+    		
+    		<p>Date Field: <input type="datetime-local" th:field="*{datetimeField}" /></p>
+    		
+    		<p>Color Field: <input type="color" th:field="*{colorField}" /></p>
+    		
+    		<div>
+    			<label th:for="singleCheckboxField" th:text="'Single Checkbox Field:'"></label>
+    			<input type="checkbox" th:field="*{singleCheckboxField}" />
+    		</div>
+    		
+    		<p>Multi Checkbox Fields:</p>
+    		<ul>
+    			<li th:each="checkboxValue: ${multiCheckboxAllValues}">
+    				<input type="checkbox" th:field="*{multiCheckboxSelectedValues}" th:value="${checkboxValue}" />
+    				<label th:for="${#ids.prev('multiCheckboxSelectedValues')}" th:text="${checkboxValue}"></label>
+    			</li>
+    		</ul>
+    		
+    		<p>Radio Button Fields:</p>
+    		<ul>
+    			<li th:each="radioValue: ${singleSelectAllValues}">
+    				<input type="radio" th:field="*{radioButtonSelectedValue}" th:value="${radioValue}" />
+    				<label th:for="${#ids.prev('radioButtonSelectedValue')}" th:text="${radioValue}"></label>
+    			</li>
+    		</ul>
+    		
+    		<p>Dropdown Field:</p>
+    		<select th:field="*{dropdownSelectedValue}">
+    			<option th:each="dropdownValue: ${singleSelectAllValues}"
+    					th:value="${dropdownValue}"
+    					th:text="${dropdownValue}" ></option>
+    		</select>    		
+    		
+	    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /> </p>
+    </form>
+</body>
+</html>
