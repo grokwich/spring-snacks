@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Form Validation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	 <style>
+	    	.error { color: red; font-size: 0.9em; font-weight: bold; }
+	</style>    
+</head>
+<body>
+    <p th:text="'Hello, Bud! Please fill out the form.'" />    
+    
+    <form action="#" th:action="@{/fooform}" th:object="${command}" method="post">
+    		<p>Simple Text Field: <input type="text" th:field="*{textField}" />
+ 			<span class="error" th:if="${#fields.hasErrors('textField')}" th:errors="*{textField}"></span>
+ 		</p>
+    		
+    		
+    		<p>Text Area Field: <textarea th:field="*{textareaField}" ></textarea>
+  		 	<span class="error" th:if="${#fields.hasErrors('textareaField')}" th:errors="*{textareaField}"></span>
+  		</p>
+
+    		
+	    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /> </p>
+    </form>
+</body>
+</html>

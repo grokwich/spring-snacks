@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Form Result</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <p th:text="'Here you go Bud!'" />    
+
+	<p th:text= "'Text Value: ' + ${command.textField}" />
+	<p th:text= "'Textarea Value: ' + ${command.textareaField}" />
+	
+	<a href="/fooform">resubmit form</a>
+</body>
+</html>
