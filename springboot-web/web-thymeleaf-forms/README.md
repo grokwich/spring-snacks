@@ -1,5 +1,10 @@
-## web-thymeleaf-forms
+# web-thymeleaf-forms
 Snack-sample that demonstrates integration of HTML Form workflow between Spring Boot and Thymeleaf.
+
+## Blog Discussion
+https://medium.com/@grokwich/spring-boot-thymeleaf-html-form-handling-762ef0d51327
+
+## HTML Form Elements
 
 Most form elements have been demonstrated. 
 * `<input type="text" ...`   // simple text field

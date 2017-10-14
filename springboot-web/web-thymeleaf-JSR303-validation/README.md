@@ -1,8 +1,11 @@
-## web-thymeleaf-JSR303-validation  (Part #2)
+# web-thymeleaf-JSR303-validation  (Part #2)
 
 Snack-sample that demonstrates JSR303-validation (bean validation annotations).
 
 The Command pattern is used and most form elements have been demonstrated.
+
+## Blog Discussion
+https://medium.com/@grokwich/spring-boot-thymeleaf-html-form-handling-part-2-b4c9e83a189c
 
 ## Validation error messages.
 
